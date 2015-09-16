@@ -11,12 +11,12 @@ function index()
 	end
 
 	local page
-	page = node("admin", "RA-MOD")
+	page = node("admin", "long1983")
 	page.target = firstchild()
-	page.title = _("RA-MOD")
+	page.title = _("long1983")
 	page.order  = 65
 
-	page = entry({"admin", "RA-MOD", "vsftpd"}, cbi("vsftpd"), _("vsftpd"), 50)
+	page = entry({"admin", "long1983", "vsftpd"}, cbi("vsftpd"), _("vsftpd"), 50)
 	page.i18n = "vsftpd"
 	page.dependent = true
 end
