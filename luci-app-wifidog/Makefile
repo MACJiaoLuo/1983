@@ -24,7 +24,7 @@ endef
 
 define Package/luci-app-wifidog/postinst
 #!/bin/sh
-( . /etc/uci-defaults/luci-shadowsocks ) && rm -f /etc/uci-defaults/luci-wifidog
+( . /etc/uci-defaults/luci-wifidog ) && rm -f /etc/uci-defaults/luci-wifidog
 exit 0
 endef
 
