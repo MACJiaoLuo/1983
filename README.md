@@ -18,7 +18,7 @@ packages\net 里面添加了 libpcap --- 这个是可以 pin 的 1.1.12 版本
 添加了 Gmediarender 音乐推送插件
 
 ---20150929---
-添加了 luci-app-mjpg-streamer
+添加了 luci-app-mjpg-streamer 里面自带全中文的 camwww
 
 
 
