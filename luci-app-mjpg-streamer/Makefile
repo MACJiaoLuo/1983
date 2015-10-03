@@ -16,7 +16,7 @@ PKGARCH:=all
 endef
 
 define Package/luci-app-mjpg-streamer/description
-LuCI Support for shadowsocks
+LuCI Support for mjpg-streamer
 endef
 
 define Build/Compile
@@ -24,7 +24,7 @@ endef
 
 define Package/luci-app-mjpg-streamer/postinst
 #!/bin/sh
-( . /etc/uci-defaults/luci-mjpg-streamer ) && rm -f /etc/uci-defaults/luci-app-mjpg-streamer
+( . /etc/uci-defaults/luci-mjpg-streamer ) && rm -f /etc/uci-defaults/luci-mjpg-streamer
 exit 0
 endef
 
