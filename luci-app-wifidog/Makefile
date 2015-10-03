@@ -16,7 +16,7 @@ PKGARCH:=all
 endef
 
 define Package/luci-app-wifidog/description
-LuCI Support for shadowsocks
+LuCI Support for wifidog
 endef
 
 define Build/Compile
@@ -41,6 +41,8 @@ endef
 
 define Package/luci-app-wifidog/install
 	$(CP) ./root/* $(1)
+	$(INSTALL_BIN) ./etc/init.d/wifidog
+	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_DIR) $(1)/etc/uci-defaults
 	$(INSTALL_BIN) ./files/luci-wifidog.uci $(1)/etc/uci-defaults/luci-wifidog
 endef
