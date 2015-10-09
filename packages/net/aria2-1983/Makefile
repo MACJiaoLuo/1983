@@ -6,7 +6,7 @@
 #
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=aria2-1983
+PKG_NAME:=aria2-1983-1983
 PKG_VERSION:=1.19.2
 PKG_RELEASE:=1
 
@@ -20,40 +20,40 @@ PKG_LICENSE:=GPLv2
 PKG_LICENSE_FILES:=COPYING
 
 PKG_CONFIG_DEPENDS := \
-  ARIA2_NOSSL \
-  ARIA2_OPENSSL \
-  ARIA2_GNUTLS \
-  ARIA2_BITTORRENT \
-  ARIA2_METALINK
+  aria2-1983_NOSSL \
+  aria2-1983_OPENSSL \
+  aria2-1983_GNUTLS \
+  aria2-1983_BITTORRENT \
+  aria2-1983_METALINK
 
 include $(INCLUDE_DIR)/package.mk
 
-define Package/aria2/config
+define Package/aria2-1983/config
   source "$(SOURCE)/Config.in"
 endef
 
-define Package/aria2
+define Package/aria2-1983
   SECTION:=net
   CATEGORY:=Network
   SUBMENU:=File Transfer
   TITLE:=lightweight download utility
-  URL:=http://aria2.sourceforge.net/
-  DEPENDS:=+zlib +ARIA2_METALINK:libxml2 +libstdcpp +ARIA2_OPENSSL:libopenssl +ARIA2_GNUTLS:libgnutls
+  URL:=http://aria2-1983.sourceforge.net/
+  DEPENDS:=+zlib +aria2-1983_METALINK:libxml2 +libstdcpp +aria2-1983_OPENSSL:libopenssl +aria2-1983_GNUTLS:libgnutls
 endef
 
-define Package/aria2/description
- aria2 is a lightweight multi-protocol & multi-source command-line download
+define Package/aria2-1983/description
+ aria2-1983 is a lightweight multi-protocol & multi-source command-line download
  utility
 endef
 
 CONFIGURE_ARGS += \
 	--disable-nls \
-	$(if $(CONFIG_ARIA2_NOSSL),--disable,--enable)-ssl \
-	$(if $(CONFIG_ARIA2_OPENSSL),--with,--without)-openssl \
-	$(if $(CONFIG_ARIA2_GNUTLS),--with,--without)-gnutls \
-	$(if $(CONFIG_ARIA2_BITTORRENT),--enable,--disable)-bittorrent \
-	$(if $(CONFIG_ARIA2_METALINK),--enable,--disable)-metalink \
-	$(if $(CONFIG_ARIA2_METALINK),--with,--without)-libxml2 \
+	$(if $(CONFIG_aria2-1983_NOSSL),--disable,--enable)-ssl \
+	$(if $(CONFIG_aria2-1983_OPENSSL),--with,--without)-openssl \
+	$(if $(CONFIG_aria2-1983_GNUTLS),--with,--without)-gnutls \
+	$(if $(CONFIG_aria2-1983_BITTORRENT),--enable,--disable)-bittorrent \
+	$(if $(CONFIG_aria2-1983_METALINK),--enable,--disable)-metalink \
+	$(if $(CONFIG_aria2-1983_METALINK),--with,--without)-libxml2 \
 	--without-libnettle \
 	--without-libgmp \
 	--without-libgcrypt \
@@ -62,9 +62,9 @@ CONFIGURE_ARGS += \
 	--without-sqlite3 \
 	--with-libz
 
-define Package/aria2/install
+define Package/aria2-1983/install
 	$(INSTALL_DIR) $(1)/usr/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/bin/aria2c $(1)/usr/bin
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/bin/aria2-1983c $(1)/usr/bin
 endef
 
-$(eval $(call BuildPackage,aria2))
+$(eval $(call BuildPackage,aria2-1983))
