@@ -18,7 +18,7 @@ include $(INCLUDE_DIR)/package.mk
 define Package/luci-theme-$(THEME_NAME)
   SECTION:=luci
   CATEGORY:=LuCI
-  SUBMENU:=9. Themes
+  SUBMENU:=4. Themes
   DEPENDS:=+libc
   TITLE:=LuCI Theme - $(THEME_TITLE)
   URL:=http://wcan.in/
