@@ -5,7 +5,7 @@ openwrt-dist-luci: ShadowSocks
 module("luci.controller.shadowsocks", package.seeall)
 
 function index()
-	if not nixio.fs.access("/etc/config/shadowsocks") then
+	if not nixio.fs.access("/etc/config/shadowsocks-libev") then
 		return
 	end
 

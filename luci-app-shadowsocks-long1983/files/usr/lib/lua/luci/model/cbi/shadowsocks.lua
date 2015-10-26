@@ -1,17 +1,17 @@
 --[[
-openwrt-dist-luci: ShadowSocks
+openwrt-dist-luci: ShadowSocks-libev
 ]]--
 
 local m, s, o, e, a
 
 if luci.sys.call("pidof ss-redir >/dev/null") == 0 then
-	m = Map("shadowsocks", translate("ShadowSocks"), translate("ShadowSocks is running"))
+	m = Map("ShadowSocks-libev", translate("ShadowSocks-libev"), translate("ShadowSocks-libev is running"))
 else
-	m = Map("shadowsocks", translate("ShadowSocks"), translate("ShadowSocks is not running"))
+	m = Map("ShadowSocks-libev", translate("ShadowSocks-libev"), translate("ShadowSocks-libev is not running"))
 end
 
 -- Global Setting
-s = m:section(TypedSection, "shadowsocks", translate("Global Setting"))
+s = m:section(TypedSection, "ShadowSocks-libev", translate("Global Setting"))
 s.anonymous = true
 
 o = s:option(Flag, "enable", translate("Enable"))
@@ -23,8 +23,8 @@ o.default = 1
 o.rmempty = false
 
 o = s:option(Value, "config_file", translate("Config File Path"))
-o.placeholder = "/etc/shadowsocks/config.json"
-o.default = "/etc/shadowsocks/config.json"
+o.placeholder = "/etc/ShadowSocks-libev/config.json"
+o.default = "/etc/ShadowSocks-libev/config.json"
 o.datatype = "file"
 o:depends("use_conf_file", 1)
 
@@ -79,13 +79,13 @@ end
 o:depends("use_conf_file", "")
 
 -- Proxy Setting
-s = m:section(TypedSection, "shadowsocks", translate("Proxy Setting"))
+s = m:section(TypedSection, "ShadowSocks-libev", translate("Proxy Setting"))
 s.anonymous = true
 
 o = s:option(Value, "ignore_list", translate("Proxy Method"))
 o:value("/dev/null", translate("Global Proxy"))
-o:value("/etc/shadowsocks/ignore.list", translate("Ignore List"))
-o.default = "/etc/shadowsocks/ignore.list"
+o:value("/etc/ShadowSocks-libev/ignore.list", translate("Ignore List"))
+o.default = "/etc/ShadowSocks-libev/ignore.list"
 o.rmempty = false
 
 o = s:option(ListValue, "udp_relay", translate("Proxy Protocol"))
@@ -95,7 +95,7 @@ o.default = 1
 o.rmempty = false
 
 -- UDP Forward
-s = m:section(TypedSection, "shadowsocks", translate("UDP Forward"))
+s = m:section(TypedSection, "ShadowSocks-libev", translate("UDP Forward"))
 s.anonymous = true
 
 o = s:option(Flag, "tunnel_enable", translate("Enable"))
@@ -112,7 +112,7 @@ o.default = "8.8.4.4:53"
 o.placeholder = "8.8.4.4:53"
 
 -- Access Control
-s = m:section(TypedSection, "shadowsocks", translate("Access Control"))
+s = m:section(TypedSection, "ShadowSocks-libev", translate("Access Control"))
 s.anonymous = true
 
 s:tab("lan_ac", translate("LAN"))
