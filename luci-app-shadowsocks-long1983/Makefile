@@ -18,7 +18,7 @@ define Package/luci-app-shadowsocks-long1983
   CATEGORY:=LuCI
   SUBMENU:=3. Applications
   TITLE:=LuCI Support for shadowsocks-long1983 downloading app.
-  DEPENDS:=+shadowsocks
+  DEPENDS:=+shadowsocks-libev
   PKGARCH:=all
   MAINTAINER:=long1983
 endef
