@@ -21,6 +21,11 @@ packages\net 里面添加了 libpcap --- 这个是可以 pin 的 1.1.12 版本
 添加了 luci-app-mjpg-streamer 里面自带全中文的 webcam(在/www/webcam)
 
 
+---20151121---
+添加了 luci-app-shadowsocks-libev-2 多了功能的(黑白名单)
+
+
+
 
 Add this line to your feeds.conf.default.
 
